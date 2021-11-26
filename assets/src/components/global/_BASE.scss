@@ -1,0 +1,156 @@
+@import "./reset";
+@import "./config";
+
+html {
+    font-size: 62.5%;
+}
+html,
+body,
+#wrap {
+    height: 100%;
+}
+
+body {
+    transition: all 2s ease;
+    --mybox-color: green;
+    --mybox-height: 300px;
+}
+
+.animated {
+    opacity: 1;
+}
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.6rem;
+}
+
+.main_contents {
+    flex: 1;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    @include pc {
+        // モバイルのときにjsで生成される値
+        // margin-top: 0 !important;
+    }
+
+    &--visHidden {
+        visibility: hidden;
+    }
+
+    &--opacity {
+        opacity: 0.5 !important;
+    }
+}
+
+.container {
+    @include siteBaseWidth();
+
+    &--height100 {
+        height: 100%;
+        position: relative;
+        z-index: 3;
+    }
+    &--midFull {
+        @include pc {
+            max-width: 900px;
+        }
+    }
+
+    &--widthSideNav {
+        @include pc {
+            max-width: 806px;
+        }
+    }
+}
+
+.sectionWrapWithSideNav {
+    width: 100%;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    @include pc {
+        background: #fff;
+        width: 100%;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+        &--onlyFront {
+            box-shadow: initial;
+            background: transparent;
+            top: 1%;
+        }
+    }
+}
+
+footer {
+    margin-top: 9rem;
+    background: $bkLightbeige;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+    &:focus {
+        outline: none;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.mb_only {
+    display: initial;
+    @include pc {
+        display: none;
+    }
+}
+
+.pc_only {
+    display: none;
+    @include pc {
+        display: initial;
+    }
+}
+
+.myWysiwyg {
+    // ワードプレスウィシー用
+    strong {
+        // font-weight: $bold;
+    }
+    // チェック系リスト
+    ul {
+        margin-left: 1.4em;
+        li {
+            font-size: 1.4rem;
+            margin: 1em 0;
+        }
+    }
+
+    small {
+        font-size: 88%;
+    }
+
+    .txtWithCircleImage_flex_item_mainText_underLineYellow {
+        background: linear-gradient(transparent 75%, #fcffa8 0%);
+    }
+}
+
+.txt_red {
+    color: #bd141f;
+}
+
+// コンタクトフォームズーム回避
+input {
+    font-size: 16px;
+}

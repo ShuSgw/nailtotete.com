@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap");
+
+$imagePath: "../images/";
+// url("#{$imagePath}/front-page/front-hero/bg_hero_01_2x.jpg");
+// family
+$baseFont: "Noto Sans JP", sans-serif;
+$secFont: "Noto Serif", serif;
+// font-weight
+$reg: 400;
+$regItalic: 400 italic;
+$mid: 500;
+$bol: 700;
+// font-style
+$styleIta: italic;
+// col
+$darkTxtCol: #383838;
+$lightTxtCol: #777777;
+$baseGreen: #266045;
+$darkGreen: #1a4531;
+$gold: #c8a96a;
+$orange: #cc813b;
+
+// 背景のみカラー
+$bkGray: #f7f7f7;
+$bkBeige: rgba(250, 247, 241);
+$bkLightbeige: #faf7f1;
+$bkDarkbeige: #f0e5cf;
+$bkDarkGreen: #eff4f2;
+
+$deepOrange: #dba776;
+
+// サイドカラム背景 （簡易Web版には使わず）
+// 濃いオレンジ #DBA776
+// 薄いオレンジ #F5E5D7
+// 薄いボーダー
+// グレー #DDDDDD
+// 薄いグレー #EAEAEA
+// 薄いオレンジ #E0D0AD
+// ボックスシャドウ系
+// ヘッダーシャドウ box-shadow: 0px 0px 10px #0000001A;
+// A1ページ中盤のPopular Sizesのグレーbox-shadow（ちなみに角丸はborder-radius: 20px;）
+$blackLongShadow: 0px 5px 20px #0000001a;
+// コンタクトのところのボタンシャドウbox-shadow: 1px 2px 5px #000000;とbox-shadow: -1px -2px 5px #FFFFFFE5;のあわせ技
+
+// テキストシャドウ
+$blackShadow: 0px 0px 5px #00000080;
+$whiteShadow: 0px 0px 20px #ffffff98;
+$brownShadow: 0px 0px 5px #5b3a15;
+
+@mixin siteBaseWidth {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    @include pc {
+        max-width: 1100px;
+    }
+}
+
+$tab: 767px;
+$pc: 1200px;
+$mb: 614px;
+$sp: 400px;
+
+@mixin tab {
+    @media (min-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width: ($pc)) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media (max-width: ($sp)) {
+        @content;
+    }
+}
+
+// @include pc {
+// }
