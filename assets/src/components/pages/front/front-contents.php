@@ -1,3 +1,1 @@
-<p style='font-size:50px'>
-    nailtotete.com
-</p>
+<p>hello front contents</p>
