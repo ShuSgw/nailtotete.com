@@ -1,0 +1,3 @@
+const globalNav = () => {}
+
+export { globalNav }
