@@ -1,156 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Crete+Round&family=Rubik:wght@300&display=swap");
+
 @import "./reset";
 @import "./config";
 
+@import "./header/header-content";
+
+@import "../pages/front/frontContents";
+
 html {
     font-size: 62.5%;
+
+    @include pc {
+        font-size: 72.5%;
+    }
 }
-html,
-body,
+
+// html,e
+// body,
+// #wrap {
+//     height: 100%;
+// }
+
 #wrap {
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-body {
-    transition: all 2s ease;
-    --mybox-color: green;
-    --mybox-height: 300px;
+p {
+    font-size: 1.6rem;
 }
 
-.animated {
-    opacity: 1;
+h1 {
+    font-family: $baseFont;
+    font-size: 3rem;
+}
+h2 {
+    margin-top: 2rem;
+    font-family: $secFont;
+    font-size: 1.8rem;
+}
+
+img {
+    width: 100%;
 }
 
 #wrap {
     display: flex;
     flex-direction: column;
     font-size: 1.6rem;
+    background-image: url("#{$imagePath}/page/front/front_hero_bk.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .main_contents {
     flex: 1;
     position: relative;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
     @include pc {
-        // モバイルのときにjsで生成される値
-        // margin-top: 0 !important;
-    }
-
-    &--visHidden {
-        visibility: hidden;
-    }
-
-    &--opacity {
-        opacity: 0.5 !important;
     }
 }
 
 .container {
     @include siteBaseWidth();
-
-    &--height100 {
-        height: 100%;
-        position: relative;
-        z-index: 3;
-    }
-    &--midFull {
-        @include pc {
-            max-width: 900px;
-        }
-    }
-
-    &--widthSideNav {
-        @include pc {
-            max-width: 806px;
-        }
-    }
 }
 
-.sectionWrapWithSideNav {
-    width: 100%;
-}
-
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: 999;
-    @include pc {
-        background: #fff;
-        width: 100%;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
-        &--onlyFront {
-            box-shadow: initial;
-            background: transparent;
-            top: 1%;
-        }
-    }
-}
-
-footer {
-    margin-top: 9rem;
-    background: $bkLightbeige;
-    position: relative;
-}
-
-a {
-    text-decoration: none;
-    color: initial;
-    &:focus {
-        outline: none;
-    }
-}
-
-img {
-    width: 100%;
-    height: auto;
-    vertical-align: bottom;
-}
-
-.mb_only {
-    display: initial;
-    @include pc {
-        display: none;
-    }
-}
-
-.pc_only {
-    display: none;
-    @include pc {
-        display: initial;
-    }
-}
-
-.myWysiwyg {
-    // ワードプレスウィシー用
-    strong {
-        // font-weight: $bold;
-    }
-    // チェック系リスト
-    ul {
-        margin-left: 1.4em;
-        li {
-            font-size: 1.4rem;
-            margin: 1em 0;
-        }
-    }
-
-    small {
-        font-size: 88%;
-    }
-
-    .txtWithCircleImage_flex_item_mainText_underLineYellow {
-        background: linear-gradient(transparent 75%, #fcffa8 0%);
-    }
-}
-
-.txt_red {
-    color: #bd141f;
-}
-
-// コンタクトフォームズーム回避
-input {
-    font-size: 16px;
+header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

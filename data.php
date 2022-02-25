@@ -1,7 +1,8 @@
 <?php
     $globalVal = [
         'components' => $_SERVER['DOCUMENT_ROOT'].'/assets/src/components/',
-        'link' => stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://' . $_SERVER["HTTP_HOST"]
+        'link' => '//'.$_SERVER["HTTP_HOST"],
+        'img' => '//'.$_SERVER["HTTP_HOST"].'/public/images/',
     ];
     $hello = 'from global';
 ?>
